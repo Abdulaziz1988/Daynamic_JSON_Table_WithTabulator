@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="tabulator/themes/tabulator_midnight.css">
+    <script type="text/javascript" src="tabulator/tabulator.js"></script>
+</head>
+<body>
+
+<div id="example-table"></div>
+<script type="text/javascript">
+    $("#example-table").tabulator({
+        height:"311px",
+        fitColumns:true,
+        columns:[
+            {title:"Name", field:"name", sortable:true, width:200},
+            {title:"Progress", field:"progress", sortable:true, sorter:"number"},
+            {title:"Gender", field:"gender", sortable:true},
+            {title:"Favourite Color", field:"col", sortable:false},
+            {title:"Date Of Birth", field:"dob"},
+            {title:"Cheese Preference", field:"cheese"},
+        ],
+    });
+    var sampleData = [
+        {id:1, name:"Oli Bob", progress:12, gender:"male", rating:1, col:"red", dob:"", car:1, lucky_no:5, cheese:"Cheader"},
+        {id:2, name:"Mary May", progress:1, gender:"female", rating:2, col:"blue", dob:"14/05/1982", car:true, lucky_no:10, cheese:"Gouda"},
+        {id:3, name:"Christine Lobowski", progress:42, gender:"female", rating:0, col:"green", dob:"22/05/1982", car:"true", lucky_no:12, cheese:"Manchego"},
+        {id:4, name:"Brendon Philips", progress:100, gender:"male", rating:1, col:"orange", dob:"01/08/1980", lucky_no:18, cheese:"Brie"},
+        {id:5, name:"Margret Marmajuke", progress:16, gender:"female", rating:5, col:"yellow", dob:"31/01/1999", lucky_no:33, cheese:"Cheader"},
+    ];
+
+    $("#example-table").tabulator("setData", sampleData);
+</script>
+</body>
+</html>
